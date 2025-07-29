@@ -1,63 +1,99 @@
 body {
   font-family: sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f0f0f0;
-  height: 100vh;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f4f4f4;
+  padding: 20px;
 }
 
-.calendar-container {
+.calendar-wrapper {
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 350px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 700px;
+  margin-bottom: 30px;
 }
 
 .calendar-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
 }
 
 .calendar-header button {
   background: #007bff;
   color: white;
   border: none;
-  padding: 8px 12px;
+  padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
 }
 
 .calendar-header h2 {
   margin: 0;
-  font-size: 20px;
 }
 
-.calendar-weekdays,
-.calendar-days {
+.calendar-weekdays, .calendar-days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  text-align: center;
-  gap: 5px;
+  margin-top: 10px;
 }
 
 .calendar-weekdays div {
+  text-align: center;
   font-weight: bold;
-  color: #444;
 }
 
-.calendar-days div {
-  padding: 10px;
+.calendar-days .day {
+  min-height: 100px;
   background: #eee;
+  margin: 2px;
   border-radius: 6px;
+  padding: 5px;
+  position: relative;
 }
 
-.calendar-days .today {
-  background: #007bff;
-  color: white;
+.calendar-days .day span.date {
   font-weight: bold;
+}
+
+.task {
+  background: #ffec99;
+  margin-top: 4px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  cursor: grab;
+}
+
+.task-section {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  width: 700px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.task-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#newTaskInput {
+  width: 60%;
+  padding: 6px;
+}
+
+#addTaskBtn {
+  padding: 6px 10px;
+  margin-left: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
